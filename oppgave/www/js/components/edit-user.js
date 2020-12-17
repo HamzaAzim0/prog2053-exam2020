@@ -42,11 +42,11 @@ class EditUser extends LitElement {
   //updates user informasjon
   updateUser(i) {
     //data from HTML form
-    const dataForm = new FormData(e.target.form);
+    const form = new FormData(i.target.form);
     console.log(i)
     fetch('api/updateUser.php', {
      method: 'POST',
-     body: dataForm
+     body: form
     }).then(res=>res.json())
       .then(data=>{
         if (data.status=='success') {
